@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.time.LocalDateTime;
+import java.util.stream.Collectors;
 
 @Component
 public class SessionImp implements SessionService {
@@ -24,7 +26,10 @@ public class SessionImp implements SessionService {
     }
 
     @Override
-    public List<SessionDTO> getSessionsInLastNDays(int days) {
-        return sessionRepository.getSessionsInLastNDays(days);
+    public List<SessionDTO> getSessionsShorterThan(int hours) {
+        List<Session> sessions = sessionRepository.findSessionsWithDurationLessThan(hours);
+        // Chuyển đổi List<Session> -> List<SessionDTO>
+        return sessions.stream().map(SessionDTO::new).collect(Collectors.toList());
+
     }
 }

@@ -19,9 +19,9 @@ public class SessionController {
     private SessionService sessionService;
 
     //  Hiển thị 10 sản phẩm tạo <= 7 giờ -> hiển thị các phiên đã gửi <= 7 giờ
-    @GetMapping("/list/{days}")
-    public List<SessionDTO> getSessions(@PathVariable("days") int days) {
-        return sessionService.getSessionsInLastNDays(days);
+    @GetMapping("/list/{hours}")
+    public List<SessionDTO> getSessionsShorterThan(@PathVariable("hours") int hours) {
+        return sessionService.getSessionsShorterThan(hours);
     }
 
     //  Hiển thị tất cả sản phẩm theo danh mục -> tất cả xe đang gửi ở nhà xe đó
