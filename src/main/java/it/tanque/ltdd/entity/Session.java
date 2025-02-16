@@ -12,9 +12,9 @@ import java.time.LocalDateTime;
 @Setter
 public class Session {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String licensePlate;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
     private String status;

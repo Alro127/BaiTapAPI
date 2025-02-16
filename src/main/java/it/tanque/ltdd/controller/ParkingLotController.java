@@ -21,19 +21,10 @@ public class ParkingLotController {
     @Autowired
     private ParkingLotService parkingLotService;
 
-    @Autowired
-    private SessionService sessionService;
-
     //  Hiển thị tất cả danh mục -> tất cả nhà xe
     @GetMapping("/all")
     public List<ParkingLot> getAllParkingLots() {
         return parkingLotService.getALl();
-    }
-
-    //  Hiển thị tất cả sản phẩm theo danh mục -> tất cả xe đang gửi ở nhà xe đó
-    @GetMapping("/{parkingLotId}/all")
-    public List<Session> getAllVehiclesByParkingLotId(@PathVariable int parkingLotId) {
-        return sessionService.getAllSessionByParkingLotId(parkingLotId);
     }
 
     //  Hiển thị top 10 sản phẩm bán chạy -> top nhà xe đang đông xe nhất

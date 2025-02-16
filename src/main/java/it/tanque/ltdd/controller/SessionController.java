@@ -22,4 +22,10 @@ public class SessionController {
     public List<Session> getSessions(@PathVariable("days") int days) {
         return sessionService.getSessionsInLastNDays(days);
     }
+
+    //  Hiển thị tất cả sản phẩm theo danh mục -> tất cả xe đang gửi ở nhà xe đó
+    @GetMapping("/{parkingLotId}/all")
+    public List<Session> getAllVehiclesByParkingLotId(@PathVariable int parkingLotId) {
+        return sessionService.getAllSessionByParkingLotId(parkingLotId);
+    }
 }
