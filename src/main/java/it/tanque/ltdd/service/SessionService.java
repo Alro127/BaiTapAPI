@@ -12,5 +12,6 @@ import java.util.List;
 public interface SessionService {
     List<SessionDTO> getAllSessionByParkingLotId(int parkingLotId);
 
-    List<SessionDTO> getSessionsInLastNDays(int days);
+    List<SessionDTO> getSessionsShorterThan(int hours);
+
 }
