@@ -1,5 +1,6 @@
 package it.tanque.ltdd.controller;
 
+import it.tanque.ltdd.dto.ParkingLotDTO;
 import it.tanque.ltdd.entity.ParkingLot;
 import it.tanque.ltdd.entity.Session;
 import it.tanque.ltdd.entity.Vehicle;
@@ -23,13 +24,13 @@ public class ParkingLotController {
 
     //  Hiển thị tất cả danh mục -> tất cả nhà xe
     @GetMapping("/all")
-    public List<ParkingLot> getAllParkingLots() {
+    public List<ParkingLotDTO> getAllParkingLots() {
         return parkingLotService.getALl();
     }
 
     //  Hiển thị top 10 sản phẩm bán chạy -> top nhà xe đang đông xe nhất
     @GetMapping("/top/{number}")
-    public List<ParkingLot> getTopParkingLots(@PathVariable int number) {
+    public List<ParkingLotDTO> getTopParkingLots(@PathVariable int number) {
         return parkingLotService.getTopParkingLots(number);
     }
 

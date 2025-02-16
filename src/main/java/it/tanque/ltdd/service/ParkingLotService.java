@@ -1,6 +1,6 @@
 package it.tanque.ltdd.service;
 
-import it.tanque.ltdd.entity.ParkingLot;
+import it.tanque.ltdd.dto.ParkingLotDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 @Service
 public interface ParkingLotService {
 
-    List<ParkingLot> getALl();
+    List<ParkingLotDTO> getALl();
 
-    List<ParkingLot> getTopParkingLots(int number);
+    List<ParkingLotDTO> getTopParkingLots(int number);
 }
