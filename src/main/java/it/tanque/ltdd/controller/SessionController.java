@@ -17,7 +17,7 @@ public class SessionController {
     @Autowired
     private SessionService sessionService;
 
-    //  Hiển thị 10 sản phẩm tạo <= 7 ngày -> hiển thị các phiên đã gửi <= 7 ngay
+    //  Hiển thị 10 sản phẩm tạo <= 7 giờ -> hiển thị các phiên đã gửi <= 7 giờ
     @GetMapping("/list/{days}")
     public List<Session> getSessions(@PathVariable("days") int days) {
         return sessionService.getSessionsInLastNDays(days);
